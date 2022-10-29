@@ -26,6 +26,7 @@ int main()
     // v.erase(v.find("b"), v.find("d"));
     // v.show();
 
+
     struct timeval tv;
     gettimeofday(&tv, NULL);
     int start_sec = tv.tv_sec;
