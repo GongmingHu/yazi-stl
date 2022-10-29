@@ -574,8 +574,11 @@ typename Vector<T>::Iterator Vector<T>::insert(const Vector<T>::Iterator it, int
                 m_data[i + n - 1] = m_data[i - 1];
             }
         }
-        m_data[size] = value;
-        m_size += 1;
+        for (int i = 0; i < n; i++)
+        {
+            m_data[size + i] = value;
+        }
+        m_size += n;
         return Vector<T>::Iterator(m_data + size);
     }
     while (m_size + n > m_capacity)
