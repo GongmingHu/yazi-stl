@@ -557,7 +557,7 @@ typename Vector<T>::Iterator Vector<T>::insert(const Vector<T>::Iterator it, int
     {
         if (is_basic_type())
         {
-            memmove(m_data + size + n, m_data + size, (m_size - size) * sizeof(T));
+            std::memmove(m_data + size + n, m_data + size, (m_size - size) * sizeof(T));
         }
         else
         {
@@ -631,7 +631,7 @@ typename Vector<T>::Iterator Vector<T>::erase(const Vector<T>::Iterator it)
     int size = it - begin();
     if (is_basic_type())
     {
-        memmove(m_data + size, m_data + size + 1, (m_size - size - 1) * sizeof(T));
+        std::memmove(m_data + size, m_data + size + 1, (m_size - size - 1) * sizeof(T));
     }
     else
     {
@@ -652,7 +652,7 @@ typename Vector<T>::Iterator Vector<T>::erase(const Vector<T>::Iterator first, c
     int n = last - first;
     if (is_basic_type())
     {
-        memmove(m_data + f, m_data + l, (m_size - l) * sizeof(T));
+        std::memmove(m_data + f, m_data + l, (m_size - l) * sizeof(T));
     }
     else
     {
