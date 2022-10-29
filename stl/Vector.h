@@ -362,6 +362,10 @@ void Vector<T>::resize(int size)
             data[i] = m_data[i];
         }
     }
+    for (int i = m_size; i < size; i++)
+    {
+        data[i] = T();
+    }
 
     if (m_data != nullptr)
     {
@@ -369,10 +373,6 @@ void Vector<T>::resize(int size)
         m_data = nullptr;
     }
     m_data = data;
-    for (int i = m_size; i < size; i++)
-    {
-        m_data[i] = T();
-    }
     m_size = size;
 }
 
