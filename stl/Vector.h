@@ -2,6 +2,7 @@
 
 #include <cstring>
 #include <stdexcept>
+#include <typeinfo>
 
 namespace yazi {
 namespace stl {
