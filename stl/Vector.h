@@ -251,7 +251,11 @@ void Vector<T>::push_back(const T & value)
         }
     }
 
-    delete [] m_data;
+    if (m_data != nullptr)
+    {
+        delete [] m_data;
+        m_data = nullptr;
+    }
     m_data = data;
     m_data[m_size] = value;
     m_size++;
