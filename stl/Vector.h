@@ -351,10 +351,18 @@ void Vector<T>::resize(int size)
         }
     }
     T * data = new T[m_capacity];
-    for (int i = 0; i < m_size; i++)
+    if (is_basic_type())
     {
-        data[i] = m_data[i];
+        std::memcpy(data, m_data, m_size * sizeof(T));
     }
+    else
+    {
+        for (int i = 0; i < m_size; i++)
+        {
+            data[i] = m_data[i];
+        }
+    }
+
     if (m_data != nullptr)
     {
         delete [] m_data;
