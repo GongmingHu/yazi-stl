@@ -676,6 +676,10 @@ typename Vector<T>::Iterator Vector<T>::erase(const Vector<T>::Iterator first, c
 template <typename T>
 bool Vector<T>::is_basic_type()
 {
+    if (std::is_pointer<T>::value)
+    {
+        return true;
+    }
     return (typeid(T) == typeid(bool)) ||
            (typeid(T) == typeid(char)) ||
            (typeid(T) == typeid(unsigned char)) ||
