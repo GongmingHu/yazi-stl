@@ -26,20 +26,16 @@ int main()
     // v.erase(v.find("b"), v.find("d"));
     // v.show();
 
-    Vector<bool> v;
-    v.push_back(true);
-    v.push_back(false);
-
     struct timeval tv;
     gettimeofday(&tv, NULL);
     int start_sec = tv.tv_sec;
     int start_usec = tv.tv_usec;
 
-    const int max = 100000;
-    Vector<bool> v2;
+    const int max = 10000;
+    Vector<bool> v;
     for (int i = 0; i < max; i++)
     {
-        v2 = v;
+        v.insert(v.begin(), true);
     }
 
     gettimeofday(&tv, NULL);
