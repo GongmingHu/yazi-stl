@@ -10,23 +10,6 @@ using namespace yazi::stl;
 
 int main()
 {
-    // Vector<int> v;
-    // v.push_back(1);
-    // v.push_back(2);
-    // v.push_back(3);
-    // v.push_back(4);
-    // v.erase(v.find(2), v.find(4));
-    // v.show();
-
-    // Vector<string> v;
-    // v.push_back("a");
-    // v.push_back("b");
-    // v.push_back("c");
-    // v.push_back("d");
-    // v.erase(v.find("b"), v.find("d"));
-    // v.show();
-
-
     struct timeval tv;
     gettimeofday(&tv, NULL);
     int start_sec = tv.tv_sec;
