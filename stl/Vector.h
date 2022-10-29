@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cstring>
+#include <stdexcept>
 
 namespace yazi {
 namespace stl {
