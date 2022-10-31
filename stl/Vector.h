@@ -74,6 +74,12 @@ public:
             return it;
         }
 
+        Iterator & operator += (int i)
+        {
+            m_pointer += i;
+            return *this;
+        }
+
         Iterator operator - (int i)
         {
             Iterator it = *this;
