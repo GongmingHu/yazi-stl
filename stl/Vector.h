@@ -197,11 +197,11 @@ public:
     Iterator find(const T & value);
     Iterator rfind(const T & value);
 
-    Iterator insert(const Iterator it, const T & value);
-    Iterator insert(const Iterator it, int n, const T & value);
+    Iterator insert(Iterator it, const T & value);
+    Iterator insert(Iterator it, int n, const T & value);
 
-    Iterator erase(const Iterator it);
-    Iterator erase(const Iterator first, const Iterator last);
+    Iterator erase(Iterator it);
+    Iterator erase(Iterator first, Iterator last);
 
 private:
     bool is_basic_type();
@@ -558,13 +558,13 @@ typename Vector<T>::Iterator Vector<T>::rfind(const T & value)
 }
 
 template <typename T>
-typename Vector<T>::Iterator Vector<T>::insert(const Vector<T>::Iterator it, const T & value)
+typename Vector<T>::Iterator Vector<T>::insert(Vector<T>::Iterator it, const T & value)
 {
     return insert(it, 1, value);
 }
 
 template <typename T>
-typename Vector<T>::Iterator Vector<T>::insert(const Vector<T>::Iterator it, int n, const T & value)
+typename Vector<T>::Iterator Vector<T>::insert(Vector<T>::Iterator it, int n, const T & value)
 {
     int size = it - begin();
     if (m_size + n <= m_capacity)
@@ -638,7 +638,7 @@ typename Vector<T>::Iterator Vector<T>::insert(const Vector<T>::Iterator it, int
 }
 
 template <typename T>
-typename Vector<T>::Iterator Vector<T>::erase(const Vector<T>::Iterator it)
+typename Vector<T>::Iterator Vector<T>::erase(Vector<T>::Iterator it)
 {
     if (end() - it == 1)
     {
@@ -662,7 +662,7 @@ typename Vector<T>::Iterator Vector<T>::erase(const Vector<T>::Iterator it)
 }
 
 template <typename T>
-typename Vector<T>::Iterator Vector<T>::erase(const Vector<T>::Iterator first, const Vector<T>::Iterator last)
+typename Vector<T>::Iterator Vector<T>::erase(Vector<T>::Iterator first, Vector<T>::Iterator last)
 {
     int f = first - begin();
     int l = last - begin();
